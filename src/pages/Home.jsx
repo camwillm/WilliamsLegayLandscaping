@@ -109,9 +109,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-stone-50 to-white">
       <motion.header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          isScrolled ? 'bg-white shadow-lg py-3' : 'bg-transparent py-4'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg py-3' : 'bg-transparent py-4'
+          }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -119,13 +118,15 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex justify-between items-center px-6">
           <div className={`font-bold text-xl tracking-wider transition-colors duration-300 ${isScrolled ? 'text-stone-800' : 'text-white'}`}>
             Williams Legacy
+            <p className={`text-sm font-medium transition-colors duration-300 ${isScrolled ? 'text-stone-600' : 'text-stone-200'}`}>
+              Servicing Baltimore & Surrounding Areas
+            </p>
           </div>
           <Button
-            className={`rounded-lg transition-all duration-300 ${
-              isScrolled
+            className={`rounded-lg transition-all duration-300 ${isScrolled
                 ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
                 : 'bg-white/20 hover:bg-white/30 text-white backdrop-blur-sm border border-white/30'
-            }`}
+              }`}
           >
             Payment Portal
           </Button>
@@ -431,43 +432,43 @@ export default function Home() {
       {/* About the Owner Section */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-            <motion.div
-                className="grid lg:grid-cols-2 gap-16 items-center"
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-            >
-                <motion.div variants={itemVariants}>
-                    <img
-                        src="https://images.unsplash.com/photo-1567784177951-6faBFc267c1c?w=800&q=80"
-                        alt="Owner of Williams Legacy Landscaping"
-                        className="rounded-2xl shadow-xl w-full h-auto object-cover aspect-[4/5]"
-                    />
-                </motion.div>
-                <motion.div variants={itemVariants}>
-                    <Badge className="bg-emerald-100 text-emerald-800 px-6 py-2 mb-6">
-                        Our Founder
-                    </Badge>
-                    <h2 className="text-4xl md:text-5xl font-bold text-stone-800 mb-8 leading-tight">
-                        A Legacy of
-                        <br />
-                        <span className="text-emerald-600">Quality and Care</span>
-                    </h2>
-                    <p className="text-lg text-stone-600 mb-6 leading-relaxed">
-                        "Williams Legacy Landscaping was born from a lifelong passion for transforming outdoor spaces. Growing up in Baltimore, I learned the value of hard work and the joy of seeing a well-tended garden thrive. Our mission is to bring that same dedication and meticulous care to every lawn and garden we touch."
-                    </p>
-                    <p className="text-lg text-stone-600 mb-8 leading-relaxed">
-                        "We're more than a business; we're a part of the community, committed to building lasting relationships with our clients and leaving a legacy of beauty in our neighborhoods. Thank you for trusting us with your vision."
-                    </p>
-                    <p className="font-serif text-2xl text-stone-800">
-                        - David Williams
-                    </p>
-                    <p className="text-stone-500">
-                        Founder, Williams Legacy Landscaping
-                    </p>
-                </motion.div>
+          <motion.div
+            className="grid lg:grid-cols-2 gap-16 items-center"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.div variants={itemVariants}>
+              <img
+                src="https://images.unsplash.com/photo-1567784177951-6faBFc267c1c?w=800&q=80"
+                alt="Owner of Williams Legacy Landscaping"
+                className="rounded-2xl shadow-xl w-full h-auto object-cover aspect-[4/5]"
+              />
             </motion.div>
+            <motion.div variants={itemVariants}>
+              <Badge className="bg-emerald-100 text-emerald-800 px-6 py-2 mb-6">
+                Our Founder
+              </Badge>
+              <h2 className="text-4xl md:text-5xl font-bold text-stone-800 mb-8 leading-tight">
+                A Legacy of
+                <br />
+                <span className="text-emerald-600">Quality and Care</span>
+              </h2>
+              <p className="text-lg text-stone-600 mb-6 leading-relaxed">
+                "Williams Legacy Landscaping was born from a lifelong passion for transforming outdoor spaces. Growing up in Baltimore, I learned the value of hard work and the joy of seeing a well-tended garden thrive. Our mission is to bring that same dedication and meticulous care to every lawn and garden we touch."
+              </p>
+              <p className="text-lg text-stone-600 mb-8 leading-relaxed">
+                "We're more than a business; we're a part of the community, committed to building lasting relationships with our clients and leaving a legacy of beauty in our neighborhoods. Thank you for trusting us with your vision."
+              </p>
+              <p className="font-serif text-2xl text-stone-800">
+                - David Williams
+              </p>
+              <p className="text-stone-500">
+                Founder, Williams Legacy Landscaping
+              </p>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 

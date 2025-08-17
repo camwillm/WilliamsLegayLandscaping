@@ -15,14 +15,14 @@ export default function InstantQuoteModal({ isOpen, setIsOpen }) {
   useEffect(() => {
     if (service === 'grass') {
       const propertyPrices = {
-        row: 45,      
-        single: 60,   
+        row: 30,
+        single: 40,
       };
-      const edgingCost = 15;
-      
+      const edgingCost = 10;
+
       const base = propertyPrices[propertyType] || 0;
       const edging = includeEdging ? edgingCost : 0;
-      
+
       setEstimate(base + edging);
     } else {
       setEstimate(0);
@@ -42,8 +42,8 @@ export default function InstantQuoteModal({ isOpen, setIsOpen }) {
 
   const modalVariants = {
     hidden: { scale: 0.9, opacity: 0 },
-    visible: { 
-      scale: 1, 
+    visible: {
+      scale: 1,
       opacity: 1,
       transition: {
         type: "spring",
@@ -81,7 +81,7 @@ export default function InstantQuoteModal({ isOpen, setIsOpen }) {
                 <X className="w-5 h-5" />
               </Button>
             </div>
-            
+
             <div className="space-y-8">
               <div>
                 <Label className="font-semibold text-stone-700 mb-2 block">Select Service</Label>
@@ -92,12 +92,12 @@ export default function InstantQuoteModal({ isOpen, setIsOpen }) {
                   <SelectContent>
                     <SelectItem value="grass">
                       <div className="flex items-center gap-2">
-                        <Scissors className="w-4 h-4"/> Front Yard Grass Service
+                        <Scissors className="w-4 h-4" /> Front Yard Grass Service
                       </div>
                     </SelectItem>
                     <SelectItem value="other">
                       <div className="flex items-center gap-2">
-                        <HelpCircle className="w-4 h-4"/> Other Services
+                        <HelpCircle className="w-4 h-4" /> Other Services
                       </div>
                     </SelectItem>
                   </SelectContent>
@@ -115,26 +115,26 @@ export default function InstantQuoteModal({ isOpen, setIsOpen }) {
                       <SelectContent>
                         <SelectItem value="single">
                           <div className="flex items-center gap-2">
-                            <Home className="w-4 h-4"/> Single Family Home
+                            <Home className="w-4 h-4" /> Single Family Home
                           </div>
                         </SelectItem>
                         <SelectItem value="row">
                           <div className="flex items-center gap-2">
-                            <Home className="w-4 h-4"/> Row Home
+                            <Home className="w-4 h-4" /> Row Home
                           </div>
                         </SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
                   <div className="flex items-center justify-between rounded-lg border p-4">
-                     <Label htmlFor="edging-switch" className="font-semibold text-stone-700 flex-grow">
-                        Weed Eating / Edging Required?
-                     </Label>
-                     <Switch
-                        id="edging-switch"
-                        checked={includeEdging}
-                        onCheckedChange={setIncludeEdging}
-                      />
+                    <Label htmlFor="edging-switch" className="font-semibold text-stone-700 flex-grow">
+                      Weed Eating / Edging Required?
+                    </Label>
+                    <Switch
+                      id="edging-switch"
+                      checked={includeEdging}
+                      onCheckedChange={setIncludeEdging}
+                    />
                   </div>
                 </div>
               ) : (
@@ -150,7 +150,7 @@ export default function InstantQuoteModal({ isOpen, setIsOpen }) {
                     {service === 'grass' ? `$${estimate.toFixed(2)}` : 'Contact Us'}
                   </span>
                 </div>
-                {service === 'grass' && <p className="text-sm text-emerald-700 mt-2">*For front yard only. Final price may vary.</p>}
+                {service === 'grass' && <p className="text-sm text-emerald-700 mt-2">*For front/backyard only no obstructions. Final price may vary.</p>}
               </div>
             </div>
 
